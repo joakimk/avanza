@@ -2,54 +2,38 @@
 
 ### Table of Contents
 
--   [Avanza][1]
-    -   [Constants][2]
-        -   [Instrument types][3]
-        -   [Periods][4]
-        -   [Lists][5]
-        -   [Channels][6]
-        -   [Transaction Types][7]
-        -   [Order Types][8]
-    -   [authenticate][9]
-        -   [Parameters][10]
-    -   [disconnect][11]
-    -   [getPositions][12]
-    -   [getOverview][13]
-    -   [getAccountOverview][14]
-        -   [Parameters][15]
-    -   [getDealsAndOrders][16]
-    -   [getTransactions][17]
-        -   [Parameters][18]
-    -   [getWatchlists][19]
-    -   [addToWatchlist][20]
-        -   [Parameters][21]
-    -   [removeFromWatchlist][22]
-        -   [Parameters][23]
-    -   [getInstrument][24]
-        -   [Parameters][25]
-    -   [getOrderbook][26]
-        -   [Parameters][27]
-    -   [getOrderbooks][28]
-        -   [Parameters][29]
-    -   [getChartdata][30]
-        -   [Parameters][31]
-    -   [getInspirationLists][32]
-    -   [getInspirationList][33]
-        -   [Parameters][34]
-    -   [subscribe][35]
-        -   [Parameters][36]
-    -   [placeOrder][37]
-        -   [Parameters][38]
-    -   [getOrder][39]
-        -   [Parameters][40]
-    -   [editOrder][41]
-        -   [Parameters][42]
-    -   [deleteOrder][43]
-        -   [Parameters][44]
-    -   [search][45]
-        -   [Parameters][46]
-    -   [call][47]
-        -   [Parameters][48]
+-   [Avanza](#avanza)
+    -   [Constants](#constants)
+        -   [Instrument types](#instrument-types)
+        -   [Periods](#periods)
+        -   [Lists](#lists)
+        -   [Channels](#channels)
+        -   [Transaction Types](#transaction-types)
+        -   [Order Types](#order-types)
+    -   [authenticate](#authenticate)
+    -   [disconnect](#disconnect)
+    -   [getPositions](#getpositions)
+    -   [getOverview](#getoverview)
+    -   [getAccountOverview](#getaccountoverview)
+    -   [getDealsAndOrders](#getdealsandorders)
+    -   [getTransactions](#gettransactions)
+    -   [getWatchlists](#getwatchlists)
+    -   [addToWatchlist](#addtowatchlist)
+    -   [removeFromWatchlist](#removefromwatchlist)
+    -   [getInstrument](#getinstrument)
+    -   [getOrderbook](#getorderbook)
+    -   [getOrderbooks](#getorderbooks)
+    -   [getChartdata](#getchartdata)
+    -   [getInspirationLists](#getinspirationlists)
+    -   [getInspirationList](#getinspirationlist)
+    -   [subscribe](#subscribe)
+    -   [placeOrder](#placeorder)
+    -   [placeWebOrder](#placeweborder)
+    -   [getOrder](#getorder)
+    -   [editOrder](#editorder)
+    -   [deleteOrder](#deleteorder)
+    -   [search](#search)
+    -   [call](#call)
 
 ## Avanza
 
@@ -752,6 +736,27 @@ Place a limit order.
     -   `options.volume` **[Number][52]** How many securities to order.
 
 Returns **[Object][49]** Properties are `messages`, `requestId`, `status`, `orderId`.
+
+### placeWebOrder
+
+Place a Fill-Or-Kill order.
+
+**Parameters**
+
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Order options.
+    -   `options.accountId` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** ID of the account to trade on.
+    -   `options.advancedOrder` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** "true"|"false", choose "true" to enable FOK.
+    -   `options.orderCondition` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** "FILL_OR_KILL"|"NORMAL".
+    -   `options.orderbookId` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** ID of the instrument to trade.
+    -   `options.orderType` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** One of "BUY" or "SELL".
+    -   `options.price` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The price limit of the order.
+    -   `options.validUntil` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** A date on the form YYYY-MM-DD. Cancels
+                                           the order if this date is passed.
+    -   `options.volume` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** How many securities to order.
+    -   `options.parentContext` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** "order".
+    -   `options.volumeFactor` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** "1.00".
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Properties are `messages`, `requestId`, `status`, `orderId`.
 
 ### getOrder
 
