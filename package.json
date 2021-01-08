@@ -8,7 +8,8 @@
     "test": "npm start && cross-env NODE_ENV=test NODE_PATH=lib ava tests/**/*.test.js",
     "lint": "eslint lib/**/*",
     "docs": "npm start && node scripts/generate-documentation.js",
-    "prepublishOnly": "npm run lint"
+    "prepublishOnly": "npm run lint",
+    "prepack": "npm install && npm start"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "url": "https://github.com/fhqvst/avanza/issues"
   },
   "files": [
+    "lib",
     "dist"
   ],
   "homepage": "https://github.com/fhqvst/avanza#readme",
