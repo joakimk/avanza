@@ -1,3 +1,10 @@
+# Custom edition
+
+- Imported getChartData for barchart data from https://github.com/kfreskgard/avanza/commit/526b33c693c92ff1b66e531dc98657f7d323ca77
+- Imported placeWebOrder from https://github.com/ausrasul/avanza/commit/aaa5fe0ab75860e3a809e41d805992c3f4ba726e to get order placement that works and can do fill or kill.
+
+To build: `npm run start`
+
 # Avanza [![Build Status](https://travis-ci.com/fhqvst/avanza.svg?branch=master)](https://travis-ci.com/fhqvst/avanza)
 
 A Node.js wrapper for the unofficial Avanza API. Please note that this is only a proof of concept, hence not meant to be used by anyone.
